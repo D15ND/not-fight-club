@@ -145,7 +145,7 @@ button {
 
 .hero__block {
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   display: flex;
   justify-content: space-between;
 }
@@ -458,6 +458,14 @@ label {
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  max-width: 70%;
+  height: 400px;
+  max-height: 400px;
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .log__text {
