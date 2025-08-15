@@ -44,13 +44,8 @@
     <section class="hero__page">
       <div class="wrapper">
         <div class="hero__block">
-          <div class="hero__picture-container">
+          <div class="hero__picture-container hover__container">
             <img class="hero__avatar" src="./images/brus_li2.jpg" alt="ava">
-            <!-- <img src="./images/asterix.jpg" alt="" class="hero__avatar"> -->
-            <!-- <img class="hero__avatar" src="./images/leonardo.jpg" alt="ava"> -->
-            <!-- <img class="hero__avatar" src="./images/rafael.jpg" alt="ava"> -->
-            <!-- <img class="hero__avatar" src="./images/jaga.jpg" alt="ava"> -->
-            <!-- <img class="hero__avatar" src="./images/betman.jpg" alt="ava"> -->
           </div>
           <div class="user__info">
             <p class="nickname">BigBoss</p>
@@ -59,6 +54,55 @@
               <p class="loses">Loses: 0</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+    <section class="fight__page">
+      <div class="wrapper">
+        <div class="fight__block">
+          <div class="user__block">
+            <div class="hero__picture-container">
+              <img class="hero__avatar" src="./images/brus_li2.jpg" alt="ava">
+            </div>
+            <progress class="health__user" value="150" max="150"></progress>
+          </div>
+          <div class="inputs__block">
+            <p class="inputs__description">Pick <span class="span__zone">one</span> kick zone and <span
+                class="span__zone">two</span> protect zones</p>
+            <div class="forms__block">
+              <form class="kick__form" action="">
+                <label class="kick__label" for=""><input class="head__kick-zone-input" type="radio" name="kick__zone"
+                    id="head_kick">Head</label>
+                <label class="kick__label" for=""><input class="neck__kick-zone-input" type="radio" name="kick__zone"
+                    id="head_kick">Neck</label>
+                <label class="kick__label" for=""><input class="body__kick-zone-input" type="radio" name="kick__zone"
+                    id="head_kick">Body</label>
+                <label class="kick__label" for=""><input class="belly__kick-zone-input" type="radio" name="kick__zone"
+                    id="head_kick">Belly</label>
+                <label class="kick__label" for=""><input class="legs__kick-zone-input" type="radio" name="kick__zone"
+                    id="head_kick">Legs</label>
+              </form>
+              <span class="middle__space"></span>
+              <form class="protect__form" action="">
+                <label for=""><input class="head__zone-input" type="checkbox" name="zone" id="head">Head</label>
+                <label for=""><input class="neck__zone-input" type="checkbox" name="zone" id="neck">Neck</label>
+                <label for=""><input class="body__zone-input" type="checkbox" name="zone" id="body">Body</label>
+                <label for=""><input class="belly__zone-input" type="checkbox" name="zone" id="belly">Belly</label>
+                <label for=""><input class="legs__zone-input" type="checkbox" name="zone" id="legs">Legs</label>
+              </form>
+            </div>
+            <button class="attack__button">ATTACK</button>
+          </div>
+          <div class="enemy__block">
+            <div class="enemy__picture-container">
+              <img class="enemy__avatar" src="./images/enemy_2.jpg" alt="ava">
+            </div>
+            <progress class="health__enemy" value="150" max="150"></progress>
+          </div>
+        </div>
+        <div class="log__information">
+          <p class="log__text">BigBoss attacked Snow troll to Belly Snow troll tried to block but Bosser was very lucky
+            and crit his oppenent for 15 damage.</p>
         </div>
       </div>
     </section>
