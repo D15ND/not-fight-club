@@ -6,6 +6,8 @@ const heroChouseContainer = document.querySelector('.hover__container');
 const heroPopup = document.querySelector('.hero__popup');
 const closePopupButton = document.querySelector('.close__hero-btn');
 const audioChoose = document.querySelector('.audio__choose');
+const settingsPopup = document.querySelector('.settings__popup');
+const chooseContainer = document.querySelectorAll('.hero__chose__container');
 
 const mainHeroPicture = document.querySelectorAll('.hero__avatar');
 const heroFirst = document.querySelector('.hero1');
@@ -17,6 +19,7 @@ heroPageOpenButton.addEventListener('click', () => {
   homePage.style.display = 'none';
   fightPage.style.display = 'none';
   heroPage.style.display = 'flex';
+  settingsPopup.style.display = 'none';
 })
 
 heroChouseContainer.addEventListener('click', () => {
@@ -46,6 +49,10 @@ heroFirst.addEventListener('click', () => {
   })
   audioChoose.play();
   avatarLink = "./images/brus_li2.jpg";
+  heroFirst.classList.add('green__border');
+  heroSecond.classList.remove('green__border');
+  heroThird.classList.remove('green__border');
+  heroFourth.classList.remove('green__border');
   localStorage.setItem('avatarLink', avatarLink);
 })
 
@@ -55,6 +62,10 @@ heroSecond.addEventListener('click', () => {
   })
   audioChoose.play();
   avatarLink = './images/asterix.jpg';
+  heroSecond.classList.add('green__border');
+  heroFirst.classList.remove('green__border')
+  heroThird.classList.remove('green__border');
+  heroFourth.classList.remove('green__border');
   localStorage.setItem('avatarLink', avatarLink);
 })
 
@@ -64,6 +75,10 @@ heroThird.addEventListener('click', () => {
   })
   audioChoose.play();
   avatarLink = './images/leonardo.jpg';
+  heroThird.classList.add('green__border');
+  heroFirst.classList.remove('green__border');
+  heroSecond.classList.remove('green__border');
+  heroFourth.classList.remove('green__border');
   localStorage.setItem('avatarLink', avatarLink);
 })
 
@@ -73,12 +88,9 @@ heroFourth.addEventListener('click', () => {
   })
   audioChoose.play();
   avatarLink = './images/jaga.jpg';
+  heroFourth.classList.add('green__border');
+  heroFirst.classList.remove('green__border');
+  heroSecond.classList.remove('green__border');
+  heroThird.classList.remove('green__border');
   localStorage.setItem('avatarLink', avatarLink);
 })
-
-// document.addEventListener('click', function (event) {
-//   if (window.heroPopup && !heroPopup.contains(event.target)) {
-//     console.log('vne popup click')
-//     heroPopup.style.display = 'none';
-//   }
-// })
