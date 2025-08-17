@@ -16,6 +16,7 @@ if (savedNickName) {
 
 settingsButton.addEventListener('click', () => {
   settingsPopup.style.display = 'flex';
+  settingsButton.classList.toggle('rotate__anim');
 })
 
 settingsPopupCloseButton.addEventListener('click', () => {

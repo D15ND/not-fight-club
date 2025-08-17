@@ -20,6 +20,7 @@ heroPageOpenButton.addEventListener('click', () => {
   fightPage.style.display = 'none';
   heroPage.style.display = 'flex';
   settingsPopup.style.display = 'none';
+  heroPageOpenButton.classList.toggle('rotate__anim');
 })
 
 heroChouseContainer.addEventListener('click', () => {
