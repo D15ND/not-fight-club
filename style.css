@@ -1,0 +1,663 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  color: black;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li,
+a,
+button {
+  all: unset;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+.wrapper {
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.header {
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game__name {
+  color: red;
+}
+
+.menu__modules {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 110px;
+  width: 100%;
+}
+
+.fight__icon {
+  mask-image: url("./images/favicon32.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  max-width: 32px;
+  width: 100%;
+  max-height: 32px;
+  height: 100%;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.fight__icon:hover {
+  rotate: 180deg;
+  background-color: gray;
+  transform: scale(1.1);
+}
+
+.person__icon {
+  mask-image: url("./images/start2.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  max-width: 32px;
+  width: 100%;
+  max-height: 32px;
+  height: 100%;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.8s ease-in-out;
+}
+
+.person__icon:hover {
+  background-color: gray;
+  transform: scale(1.1);
+}
+
+.settings__icon {
+  mask-image: url("./images/settings.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  max-width: 27px;
+  width: 100%;
+  max-height: 27px;
+  height: 100%;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.8s ease-in-out;
+}
+
+.settings__icon:hover {
+  rotate: 30deg;
+  transform: scale(1.1);
+  background-color: gray;
+}
+
+.home__page {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.fight__button {
+  border: 2px solid black;
+  border-radius: 5px;
+  max-width: 100px;
+  width: 100%;
+  max-height: 40px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  transition: 0.3s ease-in-out;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 2px 2px;
+}
+
+.fight__button:hover {
+  background-color: gainsboro;
+}
+
+.register__page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+  margin: 0 auto;
+  z-index: 10;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+}
+
+.register__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  width: 100%;
+  gap: 15px;
+}
+
+.register__info {
+  font-size: 30px;
+}
+
+.register__label {
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+}
+
+.register__input {
+  font-size: 20px;
+  color: red;
+  padding: 0 10px;
+}
+
+.register__form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 250px;
+  width: 100%;
+  gap: 10px;
+}
+
+.register__button {
+  max-width: 200px;
+  padding: 5px 5px;
+  width: 100%;
+  background-color: gainsboro;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 22px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 1px;
+}
+
+/* hero page */
+
+.hero__page {
+  display: none;
+}
+
+.hero__block {
+  width: 100%;
+  min-width: 450px;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero__picture-container {
+  border-radius: 15px;
+  border: 1px solid black;
+  max-width: 300px;
+  width: 100%;
+  height: 430px;
+  box-sizing: border-box;
+}
+
+.hover__container {
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.hover__container:hover {
+  opacity: 0.5;
+  border: 2px solid black;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0);
+}
+
+.hero__avatar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  transition: 0.3s ease-in-out;
+}
+
+.user__info {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.user__statistic {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.nickname {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.wins {
+  color: green;
+  font-size: 20px;
+}
+
+.loses {
+  color: red;
+  font-size: 20px;
+}
+
+/* popup hero */
+
+.hero__popup {
+  max-width: 1000px;
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 15px;
+  background-color: gainsboro;
+  border: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero__popup-description {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.heroes__chose {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.hero__chose__container {
+  margin: 0 auto;
+  border-radius: 10px;
+  max-width: 400px;
+  height: 350px;
+  width: 100%;
+  border: 1px solid black;
+  transition: 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+.hero__chose__container:hover {
+  border: 1.5px solid black;
+  cursor: pointer;
+  opacity: 0.7;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0);
+  /* box-sizing: border-box; */
+}
+
+.hero__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.close__hero-btn,
+.close__settings-btn {
+  position: absolute;
+  width: 100%;
+  max-width: 30px;
+  max-height: 30px;
+  height: 100%;
+  top: 2%;
+  right: 1%;
+  z-index: 2;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  background-color: white;
+  border-radius: 30px;
+}
+
+.close__hero-btn:hover,
+.close__settings-btn:hover {
+  max-width: 32px;
+  max-height: 32px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0);
+}
+
+/* popup settings */
+
+.settings__popup {
+  display: none;
+  max-width: 1000px;
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 15px;
+  background-color: gainsboro;
+  border: 0;
+  position: absolute;
+  top: 10vh;
+  z-index: 2;
+}
+
+.setting__block {
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.user__paramets {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.user__description {
+  font-size: 20px;
+}
+
+.edit__button {
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 5px 10px;
+  transition: 0.3s ease-in-out;
+  text-align: center;
+  max-width: 100px;
+  width: 100%;
+}
+
+.edit__button:hover {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0);
+}
+
+.save__block {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.save__text {
+  font-size: 25px;
+}
+
+.new__nickname {
+  font-size: 20px;
+  background-color: gainsboro;
+  border-radius: 5px;
+  outline: none;
+  padding: 5px 0;
+}
+
+.save__new-nickname {
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  max-width: 60px;
+  padding: 5px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+}
+
+.save__new-nickname:hover {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0);
+}
+
+/* fight page  */
+
+.fight__page {
+  display: none;
+}
+
+.fight__block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.user__block {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.enemy__block {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.enemy__name {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.enemy__picture-container {
+  border-radius: 15px;
+  border: 1px solid black;
+  max-width: 300px;
+  width: 100%;
+  height: 430px;
+  box-sizing: border-box;
+}
+
+.enemy__avatar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.inputs__description {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.span__zone {
+  color: red;
+}
+
+.forms__block {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.kick__form {
+  row-gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.middle__space {
+  background-color: black;
+  display: flex;
+  width: 10px;
+}
+
+.protect__form {
+  row-gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  column-gap: 15px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.kick__label {
+  flex-direction: row-reverse;
+}
+
+.head__zone-input,
+.neck__zone-input,
+.body__zone-input,
+.belly__zone-input,
+.legs__zone-input {
+  width: 20px;
+}
+
+.head__kick-zone-input,
+.neck__kick-zone-input,
+.body__kick-zone-input,
+.belly__kick-zone-input,
+.legs__kick-zone-input {
+  width: 20px;
+}
+
+.attack__button {
+  margin: auto;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  letter-spacing: 2px;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  max-width: 140px;
+  border: 2px solid black;
+  font-size: 25px;
+  border-radius: 15px;
+  transition: 0.3s ease-in-out;
+}
+
+.attack__button:hover {
+  background-color: gainsboro;
+}
+
+.log__information {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  max-width: 70%;
+  height: 400px;
+  max-height: 400px;
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.log__text {
+  font-size: 25px;
+}
+
+.health__user {
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.health__user::-webkit-progress-value {
+  background-color: red;
+  border-radius: 5px;
+}
+
+.health__user::-webkit-progress-bar {
+  background-color: gainsboro;
+  border-radius: 5px;
+}
+
+.health__enemy {
+  margin-top: 5px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.health__enemy::-webkit-progress-value {
+  background-color: red;
+  border-radius: 5px;
+}
+
+.health__enemy::-webkit-progress-bar {
+  background-color: gainsboro;
+  border-radius: 5px;
+}
+
+.health-block {
+  display: flex;
+  max-width: 75px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.helth-text,
+.health__quality-enemy,
+.health__quality-user {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* classes for js */
+
+.visibilityClose {
+  visibility: hidden;
+}
+
+.visibilityOpen {
+  visibility: visible;
+}
+
+.green__border {
+  border: 4px solid green;
+}
+
+.rotate__anim {
+  rotate: 360deg;
+}
+
+body {
+  background-image: url(./images/fone.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
