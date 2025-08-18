@@ -3,3 +3,4 @@ import "./javascript/fight.js";
 import "./javascript/hero.js";
 import "./javascript/settings.js";
 import "./javascript/mainsection.js";
+import "./javascript/enemy.js";
