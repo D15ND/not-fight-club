@@ -614,7 +614,7 @@ label {
   box-sizing: border-box;
   padding: 10px 10px;
   max-width: 70%;
-  height: 400px;
+  min-height: 200px;
   max-height: 400px;
   overflow: hidden;
   border: 1px solid black;
@@ -689,4 +689,9 @@ label {
 
 .rotate__anim {
   rotate: 360deg;
+}
+
+.unlock__attack-btn {
+  border: 2px solid orange;
+  color: orange;
 }
