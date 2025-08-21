@@ -6,6 +6,7 @@ const protectInputs = document.querySelectorAll('.protect__input');
 const attackButton = document.querySelector('.attack__button');
 
 let heroProtectZones = [];
+let deleted = [];
 
 fightPageOpenButton.addEventListener('click', () => {
   homePage.style.display = 'none';
@@ -19,6 +20,7 @@ kickInputs.forEach(chooseeed => {
       console.log('kick input is selected');
       console.log('select input id: ', chooseeed.id);
     }
+    checkStatusInputs();
   })
 })
 
@@ -26,13 +28,23 @@ protectInputs.forEach(chooseeed => {
   chooseeed.addEventListener('change', () => {
     const selected = document.querySelectorAll('.protect__input:checked');
     heroProtectZones.push(chooseeed.id);
-    if (selected.length == 2) {
-      console.log('choosed 2 inputs in protect section');
-      attackButton.classList.add('unlock__attack-btn')
-    } else {
-      console.log('choosed 1 or more then 3 inputs in protect section');
-      attackButton.classList.remove('unlock__attack-btn');
+    heroProtectZones = Array.from(new Set(heroProtectZones));
+    if (heroProtectZones.length > 2) {
+      deleted = heroProtectZones.shift();
+      document.getElementById(deleted).checked = false;
     }
     console.log(heroProtectZones);
+    checkStatusInputs();
   })
 })
+
+function checkStatusInputs() {
+  const selectedKickPlayer = document.querySelector('.kick__input:checked');
+  const selectedProtectPlayer = document.querySelectorAll('.protect__input:checked');
+  if (selectedKickPlayer && selectedProtectPlayer.length === 2) {
+    attackButton.classList.add('unlock__attack-btn');
+  } else {
+    attackButton.classList.remove('unlock__attack-btn');
+  }
+}
+checkStatusInputs();
