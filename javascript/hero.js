@@ -35,6 +35,14 @@ closePopupButton.addEventListener('click', () => {
 });
 
 // hero chouse
+
+function removeBorderAllHeroes() {
+  chooseContainer.forEach(border => {
+    audioChoose.play();
+    border.classList.remove('green__border');
+  })
+}
+
 let avatarLink = './images/brus_li2.jpg';
 const saveAvatar = localStorage.getItem('avatarLink');
 
@@ -53,12 +61,9 @@ heroFirst.addEventListener('click', () => {
   mainHeroPicture.forEach((link) => {
     link.src = character.image;
   });
-  audioChoose.play();
   avatarLink = character.image;
+  removeBorderAllHeroes();
   heroFirst.classList.add('green__border');
-  heroSecond.classList.remove('green__border');
-  heroThird.classList.remove('green__border');
-  heroFourth.classList.remove('green__border');
   localStorage.setItem('avatarLink', avatarLink);
 });
 
@@ -69,12 +74,9 @@ heroSecond.addEventListener('click', () => {
   mainHeroPicture.forEach((link) => {
     link.src = character.image;
   });
-  audioChoose.play();
   avatarLink = character.image;
+  removeBorderAllHeroes();
   heroSecond.classList.add('green__border');
-  heroFirst.classList.remove('green__border');
-  heroThird.classList.remove('green__border');
-  heroFourth.classList.remove('green__border');
   localStorage.setItem('avatarLink', avatarLink);
 });
 
@@ -85,12 +87,9 @@ heroThird.addEventListener('click', () => {
   mainHeroPicture.forEach((link) => {
     link.src = character.image;
   });
-  audioChoose.play();
   avatarLink = character.image;
+  removeBorderAllHeroes();
   heroThird.classList.add('green__border');
-  heroFirst.classList.remove('green__border');
-  heroSecond.classList.remove('green__border');
-  heroFourth.classList.remove('green__border');
   localStorage.setItem('avatarLink', avatarLink);
 });
 
@@ -101,11 +100,8 @@ heroFourth.addEventListener('click', () => {
   mainHeroPicture.forEach((link) => {
     link.src = character.image;
   });
-  audioChoose.play();
   avatarLink = character.image;
+  removeBorderAllHeroes();
   heroFourth.classList.add('green__border');
-  heroFirst.classList.remove('green__border');
-  heroSecond.classList.remove('green__border');
-  heroThird.classList.remove('green__border');
   localStorage.setItem('avatarLink', avatarLink);
 });

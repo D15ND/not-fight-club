@@ -93,13 +93,13 @@ function enemyRandomProtectZone() {
 function attack(player, enemy) {
   const enemyKickZone = enemyRandomKickZone();
   const enemyProtectZone = enemyRandomProtectZone();
-  const newLog = document.createElement("p");
-  newLog.className = 'log__styles';
 
   if (!enemyProtectZone.includes(playerKickZone) && playerProtectZone.length === 2 && playerKickZone) {
     enemy.hp -= player.damage;
     enemyProgressLine.value -= player.damage;
     enemyHpQuality.textContent -= player.damage;
+    const newLog = document.createElement("p");
+    newLog.className = 'log__styles';
     newLog.textContent = `${enemyName.textContent} attacked ${nicknameGlobal.textContent} to ${enemyRandomKickZone()} and dealth ${enemy.damage} damage.`;
     document.querySelector('.log__information').appendChild(newLog);
     if (enemyProgressLine.value <= 0) {
@@ -107,17 +107,20 @@ function attack(player, enemy) {
       winsCount.textContent = +(winsCount.textContent) + 1;
       localStorage.setItem('winsCount', winsCount.textContent);
     }
+  } else if (enemyProtectZone.includes(playerKickZone && playerProtectZone.length === 2 && playerKickZone)) {
+    const newLog = document.createElement("p");
+    newLog.className = 'log__styles';
+    newLog.textContent = `${enemyName.textContent} attacked ${nicknameGlobal.textContent} to ${enemyRandomKickZone()}, but attack blocked.`;
+    document.querySelector('.log__information').appendChild(newLog);
   }
-  // else if (enemyProtectZone.includes(playerKickZone && playerProtectZone.length === 2 && playerKickZone)) {
-  //   newLog.textContent = `${enemyName.textContent} attacked ${nicknameGlobal.textContent} to ${enemyRandomKickZone()}, but attack blocked.`;
-  //   document.querySelector('.log__information').appendChild(newLog);
-  // }
 
   if (!playerProtectZone.includes(enemyKickZone) && playerProtectZone.length === 2 && playerKickZone) {
     player.hp -= enemy.damage;
     playerProgressLine.value -= enemy.damage;
     playerHpQuality.textContent -= enemy.damage;
     newLog.textContent = `${nicknameGlobal.textContent} attacked ${enemyName.textContent} to ${playerKickZone} and dealth ${player.damage} damage.`;
+    const newLog = document.createElement("p");
+    newLog.className = 'log__styles';
     document.querySelector('.log__information').appendChild(newLog);
     if (playerProgressLine.value <= 0) {
       finishPopup.style.display = 'flex';
@@ -125,11 +128,12 @@ function attack(player, enemy) {
       losesCount.textContent = +(losesCount.textContent) + 1;
       localStorage.setItem('losesCount', losesCount.textContent);
     }
+  } else if (playerProtectZone.includes(enemyKickZone) && playerProtectZone.length === 2 && playerKickZone) {
+    const newLog = document.createElement("p");
+    newLog.className = 'log__styles';
+    newLog.textContent = `${nicknameGlobal.textContent} attacked ${enemyName.textContent} to ${playerKickZone}, but attack blocked.`;
+    document.querySelector('.log__information').appendChild(newLog);
   }
-  // else if (playerProtectZone.includes(enemyKickZone) && playerProtectZone.length === 2 && playerKickZone) {
-  //   newLog.textContent = `${nicknameGlobal.textContent} attacked ${enemyName.textContent} to ${playerKickZone}, but attack blocked.`;
-  //   document.querySelector('.log__information').appendChild(newLog);
-  // }
 }
 
 export const playerCharacters = {
