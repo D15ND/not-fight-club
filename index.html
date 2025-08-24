@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="shortcut icon" href="images/favicon32.svg" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="shortcut icon" href="images/favicon32.svg" type="image/x-icon" />
   <title>N F C</title>
 </head>
 
@@ -34,7 +34,7 @@
           <p class="register__info">Create your nickname</p>
           <form action="" class="register__form">
             <label class="register__label" for="nickname">Write nickname</label>
-            <input class="register__input" type="text" id="nickname" maxlength="20" minlength="1">
+            <input class="register__input" type="text" id="nickname" maxlength="20" minlength="1" />
           </form>
           <button class="register__button">Create nickname</button>
         </div>
@@ -44,13 +44,13 @@
       <div class="wrapper">
         <div class="hero__block">
           <div class="hero__picture-container hover__container">
-            <img class="hero__avatar" src="./images/brus_li2.jpg" alt="ava">
+            <img class="hero__avatar" src="./images/brus_li2.jpg" alt="ava" />
           </div>
           <div class="user__info">
             <p class="nickname">BigBoss</p>
             <div class="user__statistic">
-              <p class="wins">Wins: 0</p>
-              <p class="loses">Loses: 0</p>
+              <p class="wins">Wins: <span class="wins__count">0</span></p>
+              <p class="loses">Loses: <span class="loses__count">0</span></p>
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@
           <div class="user__block">
             <p class="nickname">BigBoss</p>
             <div class="hero__picture-container">
-              <img class="hero__avatar" src="./images/brus_li2.jpg" alt="ava">
+              <img class="hero__avatar" src="./images/brus_li2.jpg" alt="ava" />
             </div>
             <progress class="health__user" value="150" max="150"></progress>
             <div class="health-block">
@@ -71,28 +71,35 @@
             </div>
           </div>
           <div class="inputs__block">
-            <p class="inputs__description">Pick <span class="span__zone">one</span> kick zone and <span
-                class="span__zone">two</span> protect zones</p>
+            <p class="inputs__description">
+              Pick <span class="span__zone">one</span> kick zone and
+              <span class="span__zone">two</span> protect zones
+            </p>
             <div class="forms__block">
               <form class="kick__form" action="">
-                <label class="kick__label" for=""><input class="head__kick-zone-input" type="radio" name="kick__zone"
-                    id="head_kick">Head</label>
-                <label class="kick__label" for=""><input class="neck__kick-zone-input" type="radio" name="kick__zone"
-                    id="head_kick">Neck</label>
-                <label class="kick__label" for=""><input class="body__kick-zone-input" type="radio" name="kick__zone"
-                    id="head_kick">Body</label>
-                <label class="kick__label" for=""><input class="belly__kick-zone-input" type="radio" name="kick__zone"
-                    id="head_kick">Belly</label>
-                <label class="kick__label" for=""><input class="legs__kick-zone-input" type="radio" name="kick__zone"
-                    id="head_kick">Legs</label>
+                <label class="kick__label" for="head_kick"><input class="head__kick-zone-input kick__input" type="radio"
+                    name="kick__zone" value="head" id="head_kick" />Head</label>
+                <label class="kick__label" for="neck_kick"><input class="neck__kick-zone-input kick__input" type="radio"
+                    name="kick__zone" value="neck" id="neck_kick" />Neck</label>
+                <label class="kick__label" for="body_kick"><input class="body__kick-zone-input kick__input" type="radio"
+                    name="kick__zone" value="body" id="body_kick" />Body</label>
+                <label class="kick__label" for="belly_kick"><input class="belly__kick-zone-input kick__input"
+                    type="radio" name="kick__zone" value="belly" id="belly_kick" />Belly</label>
+                <label class="kick__label" for="legs_kick"><input class="legs__kick-zone-input kick__input" type="radio"
+                    name="kick__zone" value="legs" id="legs_kick" />Legs</label>
               </form>
               <span class="middle__space"></span>
               <form class="protect__form" action="">
-                <label for=""><input class="head__zone-input" type="checkbox" name="zone" id="head">Head</label>
-                <label for=""><input class="neck__zone-input" type="checkbox" name="zone" id="neck">Neck</label>
-                <label for=""><input class="body__zone-input" type="checkbox" name="zone" id="body">Body</label>
-                <label for=""><input class="belly__zone-input" type="checkbox" name="zone" id="belly">Belly</label>
-                <label for=""><input class="legs__zone-input" type="checkbox" name="zone" id="legs">Legs</label>
+                <label for="head"><input class="head__zone-input protect__input" type="checkbox" name="zone"
+                    value="head" id="head" />Head</label>
+                <label for="neck"><input class="neck__zone-input protect__input" type="checkbox" name="zone"
+                    value="neck" id="neck" />Neck</label>
+                <label for="body"><input class="body__zone-input protect__input" type="checkbox" name="zone"
+                    value="body" id="body" />Body</label>
+                <label for="belly"><input class="belly__zone-input protect__input" type="checkbox" name="zone"
+                    value="belly" id="belly" />Belly</label>
+                <label for="legs"><input class="legs__zone-input protect__input" type="checkbox" name="zone"
+                    value="legs" id="legs" />Legs</label>
               </form>
             </div>
             <button class="attack__button">ATTACK</button>
@@ -100,7 +107,7 @@
           <div class="enemy__block">
             <p class="enemy__name">Doc Ock</p>
             <div class="enemy__picture-container">
-              <img class="enemy__avatar" src="./images/enemy_2.jpg" alt="ava">
+              <img class="enemy__avatar" src="./images/enemy_2.jpg" alt="ava" />
             </div>
             <progress class="health__enemy" value="150" max="150"></progress>
             <div class="health-block">
@@ -110,13 +117,6 @@
           </div>
         </div>
         <div class="log__information">
-          <p class="log__text">
-            <span class="nickname">BigBoss</span> attacked <span class="enemy__name">Snow troll</span> to Belly <span
-              class="enemy__name">
-              Snow troll</span> tried to
-            block but <span class="nickname">BigBoss</span> was very lucky
-            and crit his oppenent for 15 damage.
-          </p>
         </div>
       </div>
     </section>
@@ -124,35 +124,39 @@
   <dialog class="hero__popup">
     <p class="hero__popup-description">Choose the hero</p>
     <div class="heroes__chose">
-      <div class="hero__chose__container hero1">
-        <img class="hero__img" src="./images/brus_li2.jpg" alt="hero">
+      <div class="hero__chose__container hero1" id="bruceLee">
+        <img class="hero__img" src="./images/brus_li2.jpg" alt="hero" />
       </div>
-      <div class="hero__chose__container hero2">
-        <img class="hero__img" src="./images/asterix.jpg" alt="asterix">
+      <div class="hero__chose__container hero2" id="asterix">
+        <img class="hero__img" src="./images/asterix.jpg" alt="asterix" />
       </div>
-      <div class="hero__chose__container hero3">
-        <img class="hero__img" src="./images/leonardo.jpg" alt="leonardo">
+      <div class="hero__chose__container hero3" id="leonardo">
+        <img class="hero__img" src="./images/leonardo.jpg" alt="leonardo" />
       </div>
-      <div class="hero__chose__container hero4">
-        <img class="hero__img" src="./images/jaga.jpg" alt="jaga">
+      <div class="hero__chose__container hero4" id="juggernaut">
+        <img class="hero__img" src="./images/jaga.jpg" alt="jaga" />
       </div>
     </div>
-    <img class="close__hero-btn" src="./images/close.svg" alt="icon">
+    <img class="close__hero-btn" src="./images/close.svg" alt="icon" />
   </dialog>
   <dialog class="settings__popup">
     <div class="setting__block">
       <div class="user__paramets">
         <p class="user__description">Nickname:</p>
-        <p class="nickname">BigBoss</p>
+        <p class="nickname popup__nickname">BigBoss</p>
       </div>
       <button class="edit__button">Edit</button>
       <div class="save__block">
         <p class="save__text">New nickname</p>
-        <input class="new__nickname" type="text" name="new__nickname" id="new__nickname" minlength="1" maxlength="20">
+        <input class="new__nickname" type="text" name="new__nickname" id="new__nickname" minlength="1" maxlength="20" />
         <button class="save__new-nickname">Save</button>
       </div>
     </div>
-    <img class="close__settings-btn" src="./images/close.svg" alt="icon">
+    <img class="close__settings-btn" src="./images/close.svg" alt="icon" />
+  </dialog>
+  <dialog class="finish__popup">
+    <p class="result__description">You won!</p>
+    <img class="close__finish-btn" src="./images/close.svg" alt="icon" />
   </dialog>
   <audio class="audio__choose" src="./audio/audio-choose.mp3"></audio>
   <script type="module" src="./index.js"></script>
