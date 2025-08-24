@@ -1,27 +1,48 @@
+import { createHero } from './create-hero.js';
+import { setEnemyHero } from './heroes-data.js';
+
 const enemyName = document.querySelectorAll('.enemy__name');
 const enemyHP = document.querySelector('.health__quality-enemy');
 const enemyHPProgressLine = document.querySelector('.health__enemy');
 const enemyAvatar = document.querySelector('.enemy__avatar');
 const fightPageOpenButton = document.querySelector('.fight__button');
 
-let arrListEnemy = [
-  { name: "Doc Ock", hp: "150", damage: "20", url: "./images/enemy_2.jpg" },
-  { name: "Green Goblin", hp: "180", damage: "25", url: "./images/enemy_3.jpg" },
-  { name: 'Ork', hp: '200', damage: '30', url: "./images/enemy_1.jpg" }
+const ENEMY_CHARACTERS = [
+  createHero({
+    name: 'Ork',
+    hp: 200,
+    damage: 30,
+    image: "images/enemy_1.jpg",
+  }),
+  createHero({
+    name: 'Doc Ock',
+    hp: 150,
+    damage: 20,
+    image: "images/enemy_2.jpg",
+  }),
+  createHero({
+    name: 'Green Goblin',
+    hp: 180,
+    damage: 25,
+    image: "images/enemy_3.jpg",
+  }),
 ];
 
-function randomEnemyDates() {
-  let randomChoose = Math.floor(Math.random() * arrListEnemy.length);
-  enemyName.forEach(name => {
-    name.textContent = arrListEnemy[randomChoose].name;
-  })
-  enemyHP.textContent = arrListEnemy[randomChoose].hp;
-  enemyHPProgressLine.value = arrListEnemy[randomChoose].hp;
-  enemyHPProgressLine.max = arrListEnemy[randomChoose].hp;
-  enemyAvatar.src = arrListEnemy[randomChoose].url;
+function randomEnemyData() {
+  const randomIndex = Math.floor(Math.random() * ENEMY_CHARACTERS.length);
+  const enemy = ENEMY_CHARACTERS[randomIndex];
+  setEnemyHero(enemy);
+
+  enemyName.forEach((name) => {
+    name.textContent = enemy.name;
+  });
+
+  enemyHP.textContent = enemy.hp;
+  enemyHPProgressLine.value = enemy.hp;
+  enemyHPProgressLine.max = enemy.hp;
+  enemyAvatar.src = enemy.image;
 }
-randomEnemyDates();
 
 fightPageOpenButton.addEventListener('click', () => {
-  randomEnemyDates();
-})
+  randomEnemyData();
+});

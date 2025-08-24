@@ -1,3 +1,6 @@
+import { playerCharacters } from './fight.js';
+import { setPlayerHero } from './heroes-data.js';
+
 const heroPageOpenButton = document.querySelector('.person__icon');
 const fightPage = document.querySelector('.fight__page');
 const heroPage = document.querySelector('.hero__page');
@@ -21,77 +24,88 @@ heroPageOpenButton.addEventListener('click', () => {
   heroPage.style.display = 'flex';
   settingsPopup.style.display = 'none';
   heroPageOpenButton.classList.toggle('rotate__anim');
-})
+});
 
 heroChouseContainer.addEventListener('click', () => {
   heroPopup.style.display = 'flex';
-  // heroPopup.showModal();
-})
+});
 
 closePopupButton.addEventListener('click', () => {
   heroPopup.style.display = 'none';
-  // heroPopup.close();
-})
+});
 
 // hero chouse
-let avatarLink = "./images/brus_li2.jpg";
+let avatarLink = './images/brus_li2.jpg';
 const saveAvatar = localStorage.getItem('avatarLink');
 
 if (saveAvatar) {
-  mainHeroPicture.forEach(link => {
+  mainHeroPicture.forEach((link) => {
     link.src = saveAvatar;
-  })
+  });
 }
 
-audioChoose.volume = 0.3;
+audioChoose.volume = 0.1;
+
 heroFirst.addEventListener('click', () => {
-  mainHeroPicture.forEach(link => {
-    link.src = "./images/brus_li2.jpg";
-  })
+  const character = playerCharacters.bruceLee;
+  setPlayerHero(character);
+
+  mainHeroPicture.forEach((link) => {
+    link.src = character.image;
+  });
   audioChoose.play();
-  avatarLink = "./images/brus_li2.jpg";
+  avatarLink = character.image;
   heroFirst.classList.add('green__border');
   heroSecond.classList.remove('green__border');
   heroThird.classList.remove('green__border');
   heroFourth.classList.remove('green__border');
   localStorage.setItem('avatarLink', avatarLink);
-})
+});
 
 heroSecond.addEventListener('click', () => {
-  mainHeroPicture.forEach(link => {
-    link.src = "./images/asterix.jpg";
-  })
+  const character = playerCharacters.asterix;
+  setPlayerHero(character);
+
+  mainHeroPicture.forEach((link) => {
+    link.src = character.image;
+  });
   audioChoose.play();
-  avatarLink = './images/asterix.jpg';
+  avatarLink = character.image;
   heroSecond.classList.add('green__border');
-  heroFirst.classList.remove('green__border')
+  heroFirst.classList.remove('green__border');
   heroThird.classList.remove('green__border');
   heroFourth.classList.remove('green__border');
   localStorage.setItem('avatarLink', avatarLink);
-})
+});
 
 heroThird.addEventListener('click', () => {
-  mainHeroPicture.forEach(link => {
-    link.src = "./images/leonardo.jpg";
-  })
+  const character = playerCharacters.leonardo;
+  setPlayerHero(character);
+
+  mainHeroPicture.forEach((link) => {
+    link.src = character.image;
+  });
   audioChoose.play();
-  avatarLink = './images/leonardo.jpg';
+  avatarLink = character.image;
   heroThird.classList.add('green__border');
   heroFirst.classList.remove('green__border');
   heroSecond.classList.remove('green__border');
   heroFourth.classList.remove('green__border');
   localStorage.setItem('avatarLink', avatarLink);
-})
+});
 
 heroFourth.addEventListener('click', () => {
-  mainHeroPicture.forEach(link => {
-    link.src = "./images/jaga.jpg";
-  })
+  const character = playerCharacters.juggernaut;
+  setPlayerHero(character);
+
+  mainHeroPicture.forEach((link) => {
+    link.src = character.image;
+  });
   audioChoose.play();
-  avatarLink = './images/jaga.jpg';
+  avatarLink = character.image;
   heroFourth.classList.add('green__border');
   heroFirst.classList.remove('green__border');
   heroSecond.classList.remove('green__border');
   heroThird.classList.remove('green__border');
   localStorage.setItem('avatarLink', avatarLink);
-})
+});

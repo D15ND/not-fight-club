@@ -160,7 +160,7 @@ button {
   position: fixed;
   height: 100vh;
   width: 100vw;
-  background-color: white;
+  background-color: gainsboro;
 }
 
 .register__block {
@@ -187,6 +187,8 @@ button {
   color: red;
   padding: 0 10px;
   outline: none;
+  border: 1px solid black;
+  background-color: gainsboro;
 }
 
 .register__form {
@@ -610,6 +612,7 @@ label {
 .log__information {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   margin: 0 auto;
   box-sizing: border-box;
   padding: 10px 10px;
@@ -694,4 +697,53 @@ label {
 .unlock__attack-btn {
   border: 2px solid orange;
   color: orange;
+}
+
+.finish__popup {
+  display: none;
+  max-width: 1000px;
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 15px;
+  background-color: gainsboro;
+  border: 0;
+  position: absolute;
+  top: 10vh;
+  z-index: 2;
+}
+
+.result__description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  font-size: 50px;
+}
+
+.close__finish-btn {
+  position: absolute;
+  width: 100%;
+  max-width: 30px;
+  max-height: 30px;
+  height: 100%;
+  top: 2%;
+  right: 1%;
+  z-index: 2;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  background-color: white;
+  border-radius: 30px;
+}
+
+.close__finish-btn:hover {
+  max-width: 32px;
+  max-height: 32px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0);
+}
+
+.log__styles {
+  font-size: 25px;
+  color: gainsboro;
 }
