@@ -1,7 +1,7 @@
 import { createHero } from './create-hero.js';
 import { getEnemyHero, getPlayerHero } from './heroes-data.js';
 import { closeSections } from './hero.js';
-import {randomEnemyData} from './enemy.js';
+import { randomEnemyData } from './enemy.js';
 
 const fightPageOpenButton = document.querySelector('.fight__button');
 const fightPage = document.querySelector('.fight__page');
@@ -34,6 +34,7 @@ let playerKickZone = undefined;
 
 fightPageOpenButton.addEventListener('click', () => {
   closeSections();
+  randomEnemyData();
   removeLogs();
   fightPage.style.display = 'flex';
 });
@@ -176,7 +177,6 @@ export const playerCharacters = {
 finishPopup.addEventListener('click', () => {
   finishPopup.style.display = 'none';
   closeSections();
-  // randomEnemyData();
   playerProgressLine.value = 150;
   playerHpQuality.textContent = 150;
   homePage.style.display = 'flex';

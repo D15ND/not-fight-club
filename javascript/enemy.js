@@ -31,6 +31,8 @@ const enemyCharacters = [
 export function randomEnemyData() {
   const randomIndex = Math.floor(Math.random() * enemyCharacters.length);
   const enemy = enemyCharacters[randomIndex];
+
+  enemy.hp = enemy.maxHp;
   setEnemyHero(enemy);
 
   enemyName.forEach((name) => {
@@ -42,7 +44,3 @@ export function randomEnemyData() {
   enemyHPProgressLine.max = enemy.hp;
   enemyAvatar.src = enemy.image;
 }
-
-fightPageOpenButton.addEventListener('click', () => {
-  randomEnemyData();
-});
