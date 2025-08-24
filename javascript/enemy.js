@@ -28,7 +28,7 @@ const enemyCharacters = [
   }),
 ];
 
-function randomEnemyData() {
+export function randomEnemyData() {
   const randomIndex = Math.floor(Math.random() * enemyCharacters.length);
   const enemy = enemyCharacters[randomIndex];
   setEnemyHero(enemy);
