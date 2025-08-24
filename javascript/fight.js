@@ -94,7 +94,7 @@ function attack(player, enemy) {
   const enemyKickZone = enemyRandomKickZone();
   const enemyProtectZone = enemyRandomProtectZone();
 
-  if (!enemyProtectZone.includes(playerKickZone) && playerProtectZone.length === 2 && playerKickZone) {
+  if (!enemyProtectZone.includes(playerKickZone) && playerProtectZone.length === 2) {
     enemy.hp -= player.damage;
     enemyProgressLine.value -= player.damage;
     enemyHpQuality.textContent -= player.damage;
@@ -107,20 +107,20 @@ function attack(player, enemy) {
       winsCount.textContent = +(winsCount.textContent) + 1;
       localStorage.setItem('winsCount', winsCount.textContent);
     }
-  } else if (enemyProtectZone.includes(playerKickZone && playerProtectZone.length === 2 && playerKickZone)) {
+  } else if (enemyProtectZone.includes(playerKickZone) && playerProtectZone.length === 2) {
     const newLog = document.createElement("p");
     newLog.className = 'log__styles';
     newLog.textContent = `${enemyName.textContent} attacked ${nicknameGlobal.textContent} to ${enemyRandomKickZone()}, but attack blocked.`;
     document.querySelector('.log__information').appendChild(newLog);
   }
 
-  if (!playerProtectZone.includes(enemyKickZone) && playerProtectZone.length === 2 && playerKickZone) {
+  if (!playerProtectZone.includes(enemyKickZone) && playerProtectZone.length === 2) {
     player.hp -= enemy.damage;
     playerProgressLine.value -= enemy.damage;
     playerHpQuality.textContent -= enemy.damage;
-    newLog.textContent = `${nicknameGlobal.textContent} attacked ${enemyName.textContent} to ${playerKickZone} and dealth ${player.damage} damage.`;
     const newLog = document.createElement("p");
     newLog.className = 'log__styles';
+    newLog.textContent = `${nicknameGlobal.textContent} attacked ${enemyName.textContent} to ${playerKickZone} and dealth ${player.damage} damage.`;
     document.querySelector('.log__information').appendChild(newLog);
     if (playerProgressLine.value <= 0) {
       finishPopup.style.display = 'flex';
@@ -128,7 +128,7 @@ function attack(player, enemy) {
       losesCount.textContent = +(losesCount.textContent) + 1;
       localStorage.setItem('losesCount', losesCount.textContent);
     }
-  } else if (playerProtectZone.includes(enemyKickZone) && playerProtectZone.length === 2 && playerKickZone) {
+  } else if (playerProtectZone.includes(enemyKickZone) && playerProtectZone.length === 2) {
     const newLog = document.createElement("p");
     newLog.className = 'log__styles';
     newLog.textContent = `${nicknameGlobal.textContent} attacked ${enemyName.textContent} to ${playerKickZone}, but attack blocked.`;
