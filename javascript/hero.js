@@ -2,15 +2,14 @@ import { playerCharacters } from './fight.js';
 import { setPlayerHero } from './heroes-data.js';
 
 const heroPageOpenButton = document.querySelector('.person__icon');
-const fightPage = document.querySelector('.fight__page');
 const heroPage = document.querySelector('.hero__page');
-const homePage = document.querySelector('.home__page');
 const heroChouseContainer = document.querySelector('.hover__container');
 const heroPopup = document.querySelector('.hero__popup');
 const closePopupButton = document.querySelector('.close__hero-btn');
 const audioChoose = document.querySelector('.audio__choose');
 const settingsPopup = document.querySelector('.settings__popup');
 const chooseContainer = document.querySelectorAll('.hero__chose__container');
+const sections = document.querySelectorAll('section');
 
 const mainHeroPicture = document.querySelectorAll('.hero__avatar');
 const heroFirst = document.querySelector('.hero1');
@@ -18,11 +17,15 @@ const heroSecond = document.querySelector('.hero2');
 const heroThird = document.querySelector('.hero3');
 const heroFourth = document.querySelector('.hero4');
 
+export function closeSections() {
+  sections.forEach(view => {
+    view.style.display = 'none';
+  })
+}
+
 heroPageOpenButton.addEventListener('click', () => {
-  homePage.style.display = 'none';
-  fightPage.style.display = 'none';
+  closeSections();
   heroPage.style.display = 'flex';
-  settingsPopup.style.display = 'none';
   heroPageOpenButton.classList.toggle('rotate__anim');
 });
 

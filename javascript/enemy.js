@@ -7,7 +7,7 @@ const enemyHPProgressLine = document.querySelector('.health__enemy');
 const enemyAvatar = document.querySelector('.enemy__avatar');
 const fightPageOpenButton = document.querySelector('.fight__button');
 
-const ENEMY_CHARACTERS = [
+const enemyCharacters = [
   createHero({
     name: 'Ork',
     hp: 200,
@@ -29,8 +29,8 @@ const ENEMY_CHARACTERS = [
 ];
 
 function randomEnemyData() {
-  const randomIndex = Math.floor(Math.random() * ENEMY_CHARACTERS.length);
-  const enemy = ENEMY_CHARACTERS[randomIndex];
+  const randomIndex = Math.floor(Math.random() * enemyCharacters.length);
+  const enemy = enemyCharacters[randomIndex];
   setEnemyHero(enemy);
 
   enemyName.forEach((name) => {

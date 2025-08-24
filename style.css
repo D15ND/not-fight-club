@@ -72,11 +72,10 @@ button {
   height: 100%;
   background-color: white;
   cursor: pointer;
-  transition: 0.3s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .fight__icon:hover {
-  rotate: 180deg;
   background-color: gray;
   transform: scale(1.1);
 }
