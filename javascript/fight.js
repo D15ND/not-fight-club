@@ -1,5 +1,6 @@
 import { createHero } from './create-hero.js';
 import { getEnemyHero, getPlayerHero } from './heroes-data.js';
+import { closeSections } from './hero.js';
 
 const fightPageOpenButton = document.querySelector('.fight__button');
 const fightPage = document.querySelector('.fight__page');
@@ -31,7 +32,10 @@ const playerProtectZone = [];
 let playerKickZone = undefined;
 
 fightPageOpenButton.addEventListener('click', () => {
-  homePage.style.display = 'none';
+  closeSections();
+  removeLogs();
+  playerProgressLine.value = 150;
+  playerHpQuality.textContent = 150;
   fightPage.style.display = 'flex';
 });
 
@@ -136,6 +140,13 @@ function attack(player, enemy) {
   }
 }
 
+function removeLogs() {
+  const logs = document.querySelectorAll('.log__styles');
+  logs.forEach(log => {
+    log.remove();
+  })
+}
+
 export const playerCharacters = {
   bruceLee: createHero({
     name: 'Bruce Lee',
@@ -165,4 +176,6 @@ export const playerCharacters = {
 
 finishPopup.addEventListener('click', () => {
   finishPopup.style.display = 'none';
+  closeSections();
+  homePage.style.display = 'flex';
 })
